@@ -1,0 +1,172 @@
+/*
+* COLORS
+* #B1F8F2 - light blue
+* #5DD39E - green
+* #18314F - dark blue
+* #1282A2 - blue
+* #F5EE9E - yellow
+*/
+
+.clearfix:after { 
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+body {
+    background-color: #B1F8F2;
+    margin: 0 auto;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body > * {
+    margin: 0;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+    font-family: 'Russo One', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+a {
+    color: #F5EE9E;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+ul {
+    padding: 0 20px 0 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/****** Flex configuration ******/
+.flex {
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex > section {
+    flex: 1 0 300px;
+}
+
+.flex :first-child {
+    flex: 1 0 100%;
+}
+
+/****** Summary ******/
+
+.summary {
+    background-color: #18314F;
+    color: #F5F5DC;
+}
+
+.summary p {
+    margin: 10px 0;
+}
+
+.summary img {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.skills {
+    box-sizing: border-box;
+}
+
+.summary ul {
+    list-style: circle;
+}
+
+/****** Proffesional experience ********/
+
+.experience {
+    background-color: #1282A2;
+}
+
+.experience nav {
+    display: flex;
+    justify-content: center;
+}
+
+.experience nav p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    display: inline-block;  
+    width: 100px;
+    text-align: center;
+}
+
+.experience nav p:hover {
+    cursor: pointer;
+}
+
+.experience h2 {
+    margin-top: 10px;
+}
+
+.projects h3 {
+    line-height: 1.5;
+    margin-bottom: 10px;
+    border-bottom: gray dashed 1px;
+}
+
+.projects h4 {
+    margin: 10px 0;
+}
+
+/******* Education ********/
+
+.education {
+    background-color: #5DD39E;
+}
+
+/******* Footer **********/
+
+footer {
+    background-color: #18314F;
+    color: #F5F5DC;
+    text-align: center;
+}
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+}
+
+footer li {
+    display: box;
+    width: 33%;
+}
+
+@media screen and (max-width: 500px) {
+    .flex > section {
+        flex: 1 0 100%;
+    }
+}
