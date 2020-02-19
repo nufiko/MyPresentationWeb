@@ -107,6 +107,11 @@ ul {
 .experience {
     background-color: #1282A2;
     overflow: hidden;
+    white-space: nowrap;
+}
+
+.experience > * {
+    white-space: normal;
 }
 
 .experience nav {

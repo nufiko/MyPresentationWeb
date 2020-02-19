@@ -14,37 +14,25 @@ function getMaxHeight() {
 };
 
 function getWidth() {
-    expSections.forEach(section => {
-        section.style.width = "";
-    });
-    let sizes = expSections[expIdToShow].getBoundingClientRect();
-    sectionWidth = sizes.width + 100;
+    sectionWidth = document.querySelector(".experience").getBoundingClientRect().width - 60;
 };
 
 function removeStyling() {
     expSections.forEach(section => {
         section.style.border = "none";
-        section.style.display = "none";
         section.style.position = "relative";
         section.style.transition = "left 1s";
-        section.style.width = sectionWidth - 100 + "px";
+        section.style.display = "inline-block";
+        section.style.width = sectionWidth + "px";
         section.style.height = sectionMaxHeight + "px";
+        section.style.marginRight = "30px";
     });
+    document.querySelector(".experience nav").style.clear = "both";
 }
 
 function distributeSections(id) {
-    let middle = document.querySelector("#exp" + id);
-    let right = document.querySelector("#exp" +  ((id + 1) % numberOfExpSections));
-    let left = document.querySelector("#exp" + ((numberOfExpSections + id - 1) % numberOfExpSections));
-    middle.style.display = "block";
-    left.style.display = "none";
-    right.style.display = "none";
-    middle.style.left = "0px";
-    right.style.left = "-" + sectionWidth + "px";
-    left.style.left = "-" + sectionWidth + "px";
-    middle.style.position = "relative";
-    right.style.position = "absolute";
-    left.style.position = "absolute";
+    let offset = sectionWidth + 30;
+    expSections.forEach(section => section.style.left = (-1) * id * offset + "px");
 }
 
 function hideExp(id) {
