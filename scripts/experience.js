@@ -38,8 +38,6 @@ function setFirstRowHeight() {
     }
 }
 
-
-
 function getWidth() {
     sectionWidth = document.querySelector(".experience").getBoundingClientRect().width - 60;
 };
@@ -78,9 +76,9 @@ var rightArrow = document.querySelector("#right");
 window.onload = () => {
     getMaxHeight();
     getWidth();
-    setFirstRowHeight();
     removeStyling();
     distributeSections(expIdToShow);
+    setFirstRowHeight();
 };
 
 window.onresize = () => window.onload();
