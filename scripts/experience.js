@@ -13,6 +13,33 @@ function getMaxHeight() {
     });
 };
 
+function clearHeight(elem) {
+    elem.style.height = "";
+}
+
+function setFirstRowHeight() {
+    var firstRowDiv = document.querySelector("body > div");
+    var summary = document.querySelector(".summary");
+    var experience = document.querySelector(".experience");
+
+    clearHeight(firstRowDiv);
+    clearHeight(summary);
+    clearHeight(experience);
+
+    if(summary.getBoundingClientRect().width === 310) {
+        let maxHeight = 0;
+
+        let summaryHeight = summary.getBoundingClientRect().height;
+        let experienceHeight = experience.getBoundingClientRect().height;
+
+        summaryHeight > experienceHeight ? maxHeight = summaryHeight : maxHeight = experienceHeight;
+
+        firstRowDiv.style.height = maxHeight + "px";
+    }
+}
+
+
+
 function getWidth() {
     sectionWidth = document.querySelector(".experience").getBoundingClientRect().width - 60;
 };
@@ -51,6 +78,7 @@ var rightArrow = document.querySelector("#right");
 window.onload = () => {
     getMaxHeight();
     getWidth();
+    setFirstRowHeight();
     removeStyling();
     distributeSections(expIdToShow);
 };

@@ -20,6 +20,7 @@ body {
     margin: 0 auto;
     width: 80%;
     font-family: 'Courier New', Courier, monospace;
+    position: relative;
 }
 
 body > * {
@@ -27,6 +28,11 @@ body > * {
     padding: 20px 30px;
     box-sizing: border-box;
     margin: 0 auto;
+}
+
+div {
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,7 +87,9 @@ ul {
 
 .summary {
     background-color: #18314F;
+    padding: 20px 30px;
     color: #F5F5DC;
+    box-sizing: border-box;
 }
 
 .summary p {
@@ -108,6 +116,8 @@ ul {
     background-color: #1282A2;
     overflow: hidden;
     white-space: nowrap;
+    padding: 20px 30px;
+    box-sizing: border-box;
 }
 
 .experience > * {
@@ -183,5 +193,20 @@ footer li {
 @media screen and (max-width: 500px) {
     .flex > section {
         flex: 1 0 100%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .summary {
+        width: 310px;
+        height: 100%;
+        display: inline-block;
+        position: relative;
+    }
+    .experience {
+        display: inline-block;
+        position: relative;
+        width: calc(100% - 310px);
+        height: 100%;
     }
 }
